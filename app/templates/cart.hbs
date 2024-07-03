@@ -1,0 +1,26 @@
+<div>
+  <h1>
+    Shopping Cart
+  </h1>
+  <div class="cart-details">
+    <div class="cart">
+      <ul class="cart-items">
+        {{#each this.model as |item|}}
+          <CartItem @product={{item}} />
+        {{else}}
+          <div class="empty-cart">
+            <img src="img/empty-cart.png" alt="empty cart" >
+            <div>
+              <div>
+                Looks like your cart is empty
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="cart-summary">
+      <OrderSummary />
+    </div>
+  </div>
+</div>

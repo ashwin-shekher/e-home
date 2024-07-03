@@ -1,0 +1,30 @@
+<header class="header">
+  {{#link-to "index"}}
+    <div class="header__logo">
+      <img src="img/ecart.png" alt="Logo" >
+      <span class="header__name">
+        {{@name}}
+      </span>
+    </div>
+  {{/link-to}}
+  <nav class="header__menu">
+    <Login/>
+     |
+    <ul>
+      {{!-- <li>
+        {{#link-to "order-summary"}}
+          Orders
+        {{/link-to}}
+      </li> --}}
+      <li>
+        {{#link-to "cart"}}
+          <div class="cart-icon">
+            <img src="svg/cart-icon.svg" alt="Cart" >
+            <div class="cart-count">{{cartCount}}</div>
+          </div>
+        {{/link-to}}
+      </li>
+      {{! Add more menu items as needed }}
+    </ul>
+  </nav>
+</header>

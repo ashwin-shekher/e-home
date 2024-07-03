@@ -1,0 +1,10 @@
+<div class="product-list">
+  <h1>
+    Beauty Products
+  </h1>
+  <ul class="product-items">
+    {{#each model as |product|}}
+      <ProductItem @product={{product}} />
+    {{/each}}
+  </ul>
+</div>

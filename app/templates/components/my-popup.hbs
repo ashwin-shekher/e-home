@@ -1,0 +1,15 @@
+{{#if isVisible}}
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <h2>
+        {{title}}
+      </h2>
+      <p>
+        {{message}}
+      </p>
+      <button onclick={{action "closeModal"}}>
+        Proceed Ordering
+      </button>
+    </div>
+  </div>
+{{/if}}

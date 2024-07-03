@@ -1,0 +1,29 @@
+<li class="product-item">
+  <div class="product-image">
+    <img src={{product.thumbnail}} alt={{product.title}} >
+  </div>
+  <div class="product-details">
+    <h2>
+      {{product.title}}
+    </h2>
+    <p class="product-description">
+      {{product.description}}
+    </p>
+  </div>
+  <div class="product-price-qty">
+    <p class="product-price">
+      $
+      {{product.price}}
+    </p>
+    <p class="product-qty">
+      Qty : 1
+    </p>
+    <button class="add-to-cart-btn" {{action "toggleCart" product}}>
+      {{#if alreadyAdded}}
+        <img src="svg/remove-from-cart.svg" alt="Remove from cart" >
+      {{else}}
+        <img src="svg/add-to-cart.svg" alt="Add to cart" >
+      {{/if}}
+    </button>
+  </div>
+</li>

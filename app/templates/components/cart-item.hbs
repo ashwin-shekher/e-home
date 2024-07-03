@@ -1,0 +1,22 @@
+<div class="cart-item">
+  <div class="cart-item-details">
+    {{!-- template-lint-disable no-inline-styles --}}
+    <div style="cart-item-product-details">
+      <h3>
+        {{this.product.productName}}
+      </h3>
+      <p>
+        Price: $
+        {{this.product.price}}
+      </p>
+    </div>
+    {{!-- template-lint-disable no-inline-styles --}}
+    {{!-- template-lint-disable no-invalid-interactive --}}
+    <img
+      src="/svg/remove-from-cart.svg"
+      onclick={{action "removeFromCart" this.product}}
+      alt="remove"
+      style="width:30px"
+    >
+  </div>
+</div>

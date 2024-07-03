@@ -1,0 +1,32 @@
+<div class="login-container">
+  {{#unless isLoading}}
+    {{#if this.isAuthenticated}}
+      <div class="profile-dp">
+        <div class="profile-picture">
+          <div class="circle">
+            <span class="initial">
+              {{first-letter this.login.userData.firstName}}
+            </span>
+          </div>
+        </div>
+        <div class="profile">
+          {{this.login.userData.firstName}}
+        </div>
+        {{! template-lint-disable no-invalid-interactive }}
+        <div onclick={{action "logOut"}} style="cursor: pointer;">
+          <img src="/svg/log-out.svg" alt="Log Out" style="width: 20px;" />
+        </div>
+      </div>
+    {{else}}
+      <div>
+        <input type="text" onchange={{action handleUsernameInput}} />
+        <input type="password" onchange={{action handlePasswordInput}} />
+        <button {{action "logIn"}}>
+          Login
+        </button>
+      </div>
+    {{/if}}
+  {{else}}
+    <img src="/svg/3-dots-bounce.svg" alt="Loading..." >
+  {{/unless}}
+</div>

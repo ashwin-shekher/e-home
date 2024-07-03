@@ -1,0 +1,22 @@
+<h3>
+  Order Summary
+</h3>
+<p>
+  Total Items:
+  {{totalItems}}
+</p>
+<p>
+  Total Price: $
+  {{totalPrice}}
+</p>
+{{#unless isEmpty}}
+  <button onclick={{action "openPopUpHandler"}}>
+    Pay via COD
+  </button>
+  <MyPopup
+    @closeModelFromParent={{action "closePopUpHandler"}}
+    @isVisible={{this.isPopupVisible}}
+    @title="Confirm Order"
+    @message="Do you want to place the order?"
+  />
+{{/unless}}
