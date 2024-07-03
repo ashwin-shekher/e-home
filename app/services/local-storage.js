@@ -1,6 +1,6 @@
 // app/services/local-storage.js
 
-import Service from '@ember/service';
+import Service from "@ember/service";
 
 export default Service.extend({
   // Method to set an item in local storage
@@ -17,5 +17,5 @@ export default Service.extend({
   // Method to remove an item from local storage
   removeItem(key) {
     localStorage.removeItem(key);
-  }
+  },
 });

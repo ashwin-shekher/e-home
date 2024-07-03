@@ -1,14 +1,11 @@
-// app/adapters/application.js or app/serializers/application.js
-
-import JSONAPISerializer from '@ember-data/serializer/json-api';
+import JSONAPISerializer from "@ember-data/serializer/json-api";
 
 export default JSONAPISerializer.extend({
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
-
-    if (requestType === 'findAll' && payload.products) {
+    if (requestType === "findAll" && payload.products) {
       return {
-        data: payload.products.map(product => ({
-          type: 'product',
+        data: payload.products.map((product) => ({
+          type: "product",
           id: product.id,
           attributes: {
             title: product.title,
@@ -30,17 +27,13 @@ export default JSONAPISerializer.extend({
             minimumOrderQuantity: product.minimumOrderQuantity,
             meta: product.meta,
             images: product.images,
-            thumbnail: product.thumbnail
+            thumbnail: product.thumbnail,
           },
-          relationships: {
-            // Define relationships if any (e.g., reviews, categories, etc.)
-          }
-        }))
+          relationships: {},
+        })),
       };
     }
 
-    // Handle other request types or error cases if needed
-
     return this._super(...arguments);
-  }
+  },
 });

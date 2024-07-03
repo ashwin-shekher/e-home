@@ -17,7 +17,7 @@ export default Service.extend({
         body: JSON.stringify({
           username: username,
           password: password,
-          expiresInMins: 30, // optional, defaults to 60
+          expiresInMins: 30,
         }),
       });
 
@@ -74,8 +74,8 @@ export default Service.extend({
         set(this, "userData", userData);
       }
 
-      // return !!token;
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
     }
     return null;

@@ -13,6 +13,7 @@ export default Component.extend({
       await this.login.getAuth();
     } catch (error) {
       // Handle authentication error
+      // eslint-disable-next-line no-console
       console.error("Authentication error:", error);
     }
 
@@ -21,20 +22,15 @@ export default Component.extend({
 
   // Computed property to check if user is authenticated
   isAuthenticated: computed("login.userData.firstName", function () {
-    console.log("this.login.userData", this.login.userData);
     return !!this.login.userData;
   }),
 
   handleUsernameInput(event) {
     this.username = event.target.value;
-    console.log("Username:", this.username);
-    // Optionally, you can perform validation or other logic here
   },
 
   handlePasswordInput(event) {
     this.password = event.target.value;
-    console.log("Password:", this.password);
-    // Optionally, you can perform validation or other logic here
   },
 
   actions: {
